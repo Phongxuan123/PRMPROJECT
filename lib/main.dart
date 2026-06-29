@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,8 +7,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/constants/app_constants.dart';
 import 'core/routes/app_router.dart';
 import 'core/theme/app_theme.dart';
+import 'data/firebase/fcm_service.dart';
 import 'data/firebase/seed_service.dart';
 import 'firebase_options.dart';
+
+/// Xử lý thông báo FCM khi app ở background/terminated.
+///
+/// Phải là hàm top-level + `@pragma('vm:entry-point')` vì chạy trong isolate
+/// riêng; cần khởi tạo lại Firebase trong isolate đó.
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  debugPrint('[FCM] Thông báo nền: ${message.notification?.title}');
+}
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +31,15 @@ Future<void> main() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
+
+    // Khởi tạo FCM: đăng ký handler nền + xin quyền nhận thông báo. Bọc riêng
+    // để lỗi FCM không chặn app khởi động.
+    try {
+      FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+      await FcmService().requestPermission();
+    } catch (e) {
+      debugPrint('[main] Khởi tạo FCM thất bại: $e');
+    }
 
     // Seed dữ liệu mẫu ở chế độ debug (tự bỏ qua nếu đã có dữ liệu).
     if (kDebugMode) {
