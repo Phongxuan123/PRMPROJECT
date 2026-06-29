@@ -1,0 +1,130 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- Hàm trợ giúp ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && userRole() == 'admin';
+    }
+
+    function isStaffOrAbove() {
+      return isSignedIn() &&
+        userRole() in ['staff', 'branchManager', 'admin'];
+    }
+
+    // Users: chỉ đọc/ghi hồ sơ của chính mình; Admin đọc/ghi tất cả.
+    match /users/{uid} {
+      allow read, write: if isSignedIn() &&
+        (request.auth.uid == uid || isAdmin());
+
+      match /addresses/{addressId} {
+        allow read, write: if isSignedIn() && request.auth.uid == uid;
+      }
+      match /notifications/{notificationId} {
+        allow read, write: if isSignedIn() &&
+          (request.auth.uid == uid || isStaffOrAbove());
+      }
+    }
+
+    // Categories: ai cũng đọc; chỉ staff trở lên được ghi.
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if isStaffOrAbove();
+    }
+
+    // Products: ai cũng đọc; chỉ staff trở lên được ghi.
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isStaffOrAbove();
+
+      match /reviews/{reviewId} {
+        allow read: if true;
+        allow create: if isSignedIn();
+      }
+    }
+
+    // Branches / suppliers: ai cũng đọc; chỉ staff trở lên ghi.
+    match /branches/{branchId} {
+      allow read: if true;
+      allow write: if isStaffOrAbove();
+    }
+    match /suppliers/{supplierId} {
+      allow read: if isSignedIn();
+      allow write: if isStaffOrAbove();
+    }
+
+    // Inventory: đọc/ghi cho người đã đăng nhập.
+    // [!] Lý do nới lỏng ghi cho mọi user đăng nhập (không chỉ staff): luồng
+    // ĐẶT HÀNG của khách (createOrder) trừ tồn kho + ghi log ngay trong
+    // transaction phía client. Nếu khóa inventory chỉ cho staff, checkout của
+    // khách sẽ bị từ chối. Muốn siết chặt hơn cần chuyển trừ kho sang Cloud
+    // Functions (xem khuyến nghị).
+    match /inventory/{inventoryId} {
+      allow read, write: if isSignedIn();
+      match /logs/{logId} {
+        allow read, write: if isSignedIn();
+      }
+    }
+
+    // Carts: chỉ chủ sở hữu thao tác.
+    match /carts/{userId} {
+      allow read, write: if isSignedIn() && request.auth.uid == userId;
+      match /items/{itemId} {
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
+      }
+    }
+
+    // Orders: customer đọc đơn của mình; staff trở lên đọc/cập nhật.
+    match /orders/{orderId} {
+      allow read: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isStaffOrAbove());
+      allow create: if isSignedIn();
+      allow update: if isSignedIn();
+
+      match /details/{detailId} {
+        allow read: if isSignedIn();
+        allow write: if isSignedIn();
+      }
+    }
+
+    // Invoices: chỉ staff trở lên.
+    match /invoices/{invoiceId} {
+      allow read, write: if isStaffOrAbove();
+    }
+
+    // Import receipts: chỉ staff trở lên.
+    match /importReceipts/{receiptId} {
+      allow read, write: if isStaffOrAbove();
+      match /details/{detailId} {
+        allow read, write: if isStaffOrAbove();
+      }
+    }
+
+    // Returns: chủ sở hữu và staff (đã đăng nhập).
+    match /returns/{returnId} {
+      allow read, write: if isSignedIn();
+      match /details/{detailId} {
+        allow read, write: if isSignedIn();
+      }
+    }
+
+    // Promotions / vouchers: ai cũng đọc; promotions chỉ staff ghi,
+    // vouchers cho người đăng nhập ghi (giảm lượt khi đặt/hủy đơn).
+    match /promotions/{promotionId} {
+      allow read: if true;
+      allow write: if isStaffOrAbove();
+    }
+    match /vouchers/{voucherId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+  }
+}

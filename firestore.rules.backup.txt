@@ -1,0 +1,123 @@
+﻿rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- Ham tro giup ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && userRole() == 'admin';
+    }
+
+    function isStaffOrAbove() {
+      return isSignedIn() &&
+        userRole() in ['staff', 'branchManager', 'admin'];
+    }
+
+    // Users: chi doc/ghi ho so cua chinh minh; Admin doc/ghi tat ca.
+    match /users/{uid} {
+      allow read, write: if request.auth.uid == uid || isAdmin();
+
+      match /addresses/{addressId} {
+        allow read, write: if request.auth.uid == uid;
+      }
+      match /notifications/{notificationId} {
+        allow read, write: if request.auth.uid == uid || isStaffOrAbove();
+      }
+    }
+
+    // Categories: ai cung doc; chi staff tro len duoc ghi.
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if isStaffOrAbove();
+    }
+
+    // Products: ai cung doc; chi staff tro len duoc ghi.
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isStaffOrAbove();
+
+      match /reviews/{reviewId} {
+        allow read: if true;
+        allow create: if isSignedIn();
+      }
+    }
+
+    // Branches / suppliers: ai cung doc; chi staff tro len ghi.
+    match /branches/{branchId} {
+      allow read: if true;
+      allow write: if isStaffOrAbove();
+    }
+    match /suppliers/{supplierId} {
+      allow read, write: if isStaffOrAbove();
+    }
+
+    // Inventory: chi staff tro len doc/ghi.
+    match /inventory/{inventoryId} {
+      allow read, write: if isStaffOrAbove();
+      match /logs/{logId} {
+        allow read, write: if isStaffOrAbove();
+      }
+    }
+
+    // Carts: chi chu so huu thao tac.
+    match /carts/{userId} {
+      allow read, write: if request.auth.uid == userId;
+      match /items/{itemId} {
+        allow read, write: if request.auth.uid == userId;
+      }
+    }
+
+    // Orders: customer doc don cua minh; staff tro len doc/cap nhat.
+    match /orders/{orderId} {
+      allow read: if isSignedIn() &&
+        (resource.data.userId == request.auth.uid || isStaffOrAbove());
+      allow create: if isSignedIn();
+      allow update: if isSignedIn();
+
+      match /details/{detailId} {
+        allow read: if isSignedIn();
+        allow write: if isSignedIn();
+      }
+    }
+
+    // Invoices: chi staff tro len.
+    match /invoices/{invoiceId} {
+      allow read, write: if isStaffOrAbove();
+    }
+
+    // Import receipts: chi staff tro len.
+    match /importReceipts/{receiptId} {
+      allow read, write: if isStaffOrAbove();
+      match /details/{detailId} {
+        allow read, write: if isStaffOrAbove();
+      }
+    }
+
+    // Returns: chu so huu va staff.
+    match /returns/{returnId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn();
+      match /details/{detailId} {
+        allow read, write: if isSignedIn();
+      }
+    }
+
+    // Promotions / vouchers: ai cung doc; chi staff tro len ghi.
+    match /promotions/{promotionId} {
+      allow read: if true;
+      allow write: if isStaffOrAbove();
+    }
+    match /vouchers/{voucherId} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+  }
+}
+
