@@ -94,45 +94,67 @@ class _CartItemTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final repo = ref.read(cartRepositoryProvider);
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(vertical: 8),
-      leading: SizedBox(
-        width: 56,
-        height: 56,
-        child: item.imageUrl.isEmpty
-            ? const Icon(Icons.image_outlined)
-            : CachedNetworkImage(
-            imageUrl: item.imageUrl,
-            fit: BoxFit.cover,
-            placeholder: (_, _) => const Icon(Icons.image_outlined),
-            errorWidget: (_, _, _) => const Icon(Icons.broken_image_outlined),
-          ),
-      ),
-      title: Text(item.productName, maxLines: 2, overflow: TextOverflow.ellipsis),
-      subtitle: Text(CurrencyUtils.format(item.productPrice)),
-      trailing: Row(
-        mainAxisSize: MainAxisSize.min,
+    // Custom layout thay vì ListTile để tránh lỗi "no size" khi trailing Row
+    // (2 IconButton + Text) bị ListTile cấp phát constraint width = 0.
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          IconButton(
-            icon: const Icon(Icons.remove_circle_outline),
-            onPressed: userId == null
-                ? null
-                : () => repo.updateQuantity(
-                      userId: userId!,
-                      itemId: item.id,
-                      quantity: item.quantity - 1,
-                    ),
+          SizedBox(
+            width: 56,
+            height: 56,
+            child: item.imageUrl.isEmpty
+                ? const Icon(Icons.image_outlined)
+                : CachedNetworkImage(
+                    imageUrl: item.imageUrl,
+                    fit: BoxFit.cover,
+                    placeholder: (_, _) => const Icon(Icons.image_outlined),
+                    errorWidget: (_, _, _) =>
+                        const Icon(Icons.broken_image_outlined),
+                  ),
           ),
-          Text('${item.quantity}'),
-          IconButton(
-            icon: const Icon(Icons.add_circle_outline),
-            onPressed: userId == null
-                ? null
-                : () => repo.updateQuantity(
-                      userId: userId!,
-                      itemId: item.id,
-                      quantity: item.quantity + 1,
-                    ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  item.productName,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 4),
+                Text(CurrencyUtils.format(item.productPrice)),
+              ],
+            ),
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.remove_circle_outline),
+                onPressed: userId == null
+                    ? null
+                    : () => repo.updateQuantity(
+                          userId: userId!,
+                          itemId: item.id,
+                          quantity: item.quantity - 1,
+                        ),
+              ),
+              Text('${item.quantity}'),
+              IconButton(
+                icon: const Icon(Icons.add_circle_outline),
+                onPressed: userId == null
+                    ? null
+                    : () => repo.updateQuantity(
+                          userId: userId!,
+                          itemId: item.id,
+                          quantity: item.quantity + 1,
+                        ),
+              ),
+            ],
           ),
         ],
       ),
