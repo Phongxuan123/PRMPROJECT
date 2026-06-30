@@ -6,11 +6,12 @@ import 'repository_providers.dart';
 
 /// Giỏ hàng của người dùng đang đăng nhập (UC07).
 final cartItemsProvider = StreamProvider<List<CartItem>>((ref) {
-  // Dùng authStateProvider thay vì currentUserProvider để có UID ngay khi
-  // Firebase Auth xong, không cần chờ Firestore user doc load.
-  final firebaseUser = ref.watch(authStateProvider).valueOrNull;
-  if (firebaseUser == null) return Stream.value(const []);
-  return ref.watch(cartRepositoryProvider).watchCartItems(firebaseUser.uid);
+  // Dùng select để chỉ rebuild khi UID thay đổi (không rebuild khi Firebase
+  // Auth re-emit cùng user do token refresh). Tránh stream restart không cần
+  // thiết dẫn đến CartScreen hiển thị trống trong thời gian chờ.
+  final uid = ref.watch(authStateProvider.select((s) => s.valueOrNull?.uid));
+  if (uid == null) return Stream.value(const []);
+  return ref.read(cartRepositoryProvider).watchCartItems(uid);
 });
 
 /// Tổng tiền giỏ hàng.

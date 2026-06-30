@@ -26,6 +26,7 @@ class CartScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Giỏ hàng')),
       body: cartAsync.when(
+        skipLoadingOnReload: true,
         loading: () => const LoadingWidget(),
         error: (e, _) => ErrorView(message: e.toString()),
         data: (items) {
@@ -100,7 +101,12 @@ class _CartItemTile extends ConsumerWidget {
         height: 56,
         child: item.imageUrl.isEmpty
             ? const Icon(Icons.image_outlined)
-            : CachedNetworkImage(imageUrl: item.imageUrl, fit: BoxFit.cover),
+            : CachedNetworkImage(
+            imageUrl: item.imageUrl,
+            fit: BoxFit.cover,
+            placeholder: (_, _) => const Icon(Icons.image_outlined),
+            errorWidget: (_, _, _) => const Icon(Icons.broken_image_outlined),
+          ),
       ),
       title: Text(item.productName, maxLines: 2, overflow: TextOverflow.ellipsis),
       subtitle: Text(CurrencyUtils.format(item.productPrice)),
