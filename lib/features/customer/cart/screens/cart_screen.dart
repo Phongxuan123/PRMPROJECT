@@ -54,15 +54,24 @@ class CartScreen extends ConsumerWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(12),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(
+                      Flexible(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Text('Tổng cộng'),
+                            const Text(
+                              'Tổng cộng',
+                              maxLines: 1,
+                              softWrap: false,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                             Text(
                               CurrencyUtils.format(total),
+                              maxLines: 1,
+                              softWrap: false,
+                              overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)
                                   .textTheme
                                   .titleLarge
@@ -71,6 +80,7 @@ class CartScreen extends ConsumerWidget {
                           ],
                         ),
                       ),
+                      const SizedBox(width: 12),
                       FilledButton(
                         onPressed: () => context.push(AppRoutes.checkout),
                         child: const Text('Thanh toán'),
