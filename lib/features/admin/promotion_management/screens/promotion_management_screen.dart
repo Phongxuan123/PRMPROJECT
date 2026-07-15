@@ -72,6 +72,7 @@ class _PromotionTab extends ConsumerWidget {
                     decoration: const InputDecoration(labelText: 'Tên chương trình'),
                     validator: (v) => Validators.required(v, field: 'Tên'),
                   ),
+                  const SizedBox(height: 16),
                   TextFormField(
                     controller: percentController,
                     decoration:
@@ -80,6 +81,7 @@ class _PromotionTab extends ConsumerWidget {
                     validator: (v) =>
                         Validators.positiveInt(v, field: 'Phần trăm'),
                   ),
+                  const SizedBox(height: 8),
                   ListTile(
                     contentPadding: EdgeInsets.zero,
                     title: Text('Bắt đầu: ${AppDateUtils.formatDate(start)}'),
@@ -269,6 +271,7 @@ class _VoucherTab extends ConsumerWidget {
                     decoration: const InputDecoration(labelText: 'Mã voucher'),
                     validator: (v) => Validators.required(v, field: 'Mã'),
                   ),
+                  const SizedBox(height: 16),
                   TextFormField(
                     controller: valueController,
                     decoration:
@@ -277,6 +280,7 @@ class _VoucherTab extends ConsumerWidget {
                     validator: (v) =>
                         Validators.positiveNumber(v, field: 'Giá trị'),
                   ),
+                  const SizedBox(height: 16),
                   TextFormField(
                     controller: minController,
                     decoration: const InputDecoration(
@@ -285,6 +289,7 @@ class _VoucherTab extends ConsumerWidget {
                     validator: (v) =>
                         Validators.nonNegativeInt(v, field: 'Giá trị tối thiểu'),
                   ),
+                  const SizedBox(height: 16),
                   TextFormField(
                     controller: quantityController,
                     decoration: const InputDecoration(labelText: 'Số lượng'),
@@ -292,6 +297,7 @@ class _VoucherTab extends ConsumerWidget {
                     validator: (v) =>
                         Validators.nonNegativeInt(v, field: 'Số lượng'),
                   ),
+                  const SizedBox(height: 8),
                   ListTile(
                     contentPadding: EdgeInsets.zero,
                     title: Text('Hết hạn: ${AppDateUtils.formatDate(expired)}'),

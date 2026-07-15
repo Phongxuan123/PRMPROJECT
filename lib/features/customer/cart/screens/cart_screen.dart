@@ -36,60 +36,93 @@ class CartScreen extends ConsumerWidget {
               icon: Icons.shopping_cart_outlined,
             );
           }
-          return ListView.separated(
-            padding: const EdgeInsets.all(12),
-            itemCount: items.length,
-            separatorBuilder: (context, index) => const Divider(height: 1),
-            itemBuilder: (context, index) {
-              final item = items[index];
-              return _CartItemTile(item: item, userId: user?.uid);
-            },
+          // Tổng tiền + nút thanh toán đặt trong body (không dùng
+          // Scaffold.bottomNavigationBar) vì CartScreen nằm trong IndexedStack
+          // của CustomerHomeScreen — bottomNavigationBar lồng nhau không hiển thị.
+          return Column(
+            children: [
+              Expanded(
+                child: ListView.separated(
+                  padding: const EdgeInsets.all(12),
+                  itemCount: items.length,
+                  separatorBuilder: (context, index) =>
+                      const Divider(height: 1),
+                  itemBuilder: (context, index) {
+                    final item = items[index];
+                    return _CartItemTile(item: item, userId: user?.uid);
+                  },
+                ),
+              ),
+              _CartSummaryBar(total: total),
+            ],
           );
         },
       ),
-      bottomNavigationBar: cartAsync.maybeWhen(
-        data: (items) => items.isEmpty
-            ? null
-            : SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Text(
-                              'Tổng cộng',
-                              maxLines: 1,
-                              softWrap: false,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            Text(
-                              CurrencyUtils.format(total),
-                              maxLines: 1,
-                              softWrap: false,
-                              overflow: TextOverflow.ellipsis,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleLarge
-                                  ?.copyWith(fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      FilledButton(
-                        onPressed: () => context.push(AppRoutes.checkout),
-                        child: const Text('Thanh toán'),
-                      ),
-                    ],
-                  ),
+    );
+  }
+}
+
+/// Thanh tổng tiền + nút thanh toán ghim ở đáy giỏ hàng.
+class _CartSummaryBar extends StatelessWidget {
+  const _CartSummaryBar({required this.total});
+
+  final double total;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Container(
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface,
+        border: Border(
+          top: BorderSide(color: theme.dividerColor),
+        ),
+      ),
+      child: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              // Expanded để phần tổng tiền chiếm hết chỗ còn lại; nút thanh toán
+              // co theo nội dung. KHÔNG để nút dùng minimumSize mặc định của theme
+              // (Size.fromHeight = width vô hạn) vì trong Row nó sẽ ép cột text về
+              // 0 và làm sập layout ở bản release.
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text(
+                      'Tổng cộng',
+                      maxLines: 1,
+                      softWrap: false,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      CurrencyUtils.format(total),
+                      maxLines: 1,
+                      softWrap: false,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge
+                          ?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
               ),
-        orElse: () => null,
+              const SizedBox(width: 12),
+              FilledButton(
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size(0, 48),
+                ),
+                onPressed: () => context.push(AppRoutes.checkout),
+                child: const Text('Thanh toán'),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
