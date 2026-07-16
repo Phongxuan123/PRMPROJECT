@@ -1,3 +1,6 @@
+// Model chương trình khuyến mãi, ánh xạ collection promotions/{promotionId}.
+// Mỗi khuyến mãi giảm theo % và chỉ áp dụng cho danh sách productIds cụ thể.
+// Kiểm tra isActive trước khi hiển thị cho khách hàng.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../core/utils/firestore_utils.dart';

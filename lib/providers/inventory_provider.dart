@@ -1,3 +1,6 @@
+// Provider tồn kho: stream realtime theo chi nhánh và cảnh báo tồn kho thấp.
+// branchInventoryProvider: xem toàn bộ tồn kho của một chi nhánh.
+// lowStockProvider: lọc những sản phẩm dưới ngưỡng AppConstants.lowStockThreshold.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/inventory_model.dart';

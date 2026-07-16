@@ -1,3 +1,6 @@
+// Model sản phẩm và đánh giá sản phẩm.
+// Product ánh xạ products/{productId}, Review là subcollection reviews.
+// Ảnh sản phẩm được lưu dưới dạng danh sách URL từ Cloudinary.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../core/utils/firestore_utils.dart';

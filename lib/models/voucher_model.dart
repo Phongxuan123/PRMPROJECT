@@ -1,3 +1,5 @@
+// Model mã giảm giá, ánh xạ collection vouchers/{voucherId}.
+// Khách hàng nhập code khi checkout; server kiểm tra isUsable và trừ lượt trong Transaction.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../core/utils/firestore_utils.dart';

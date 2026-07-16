@@ -1,3 +1,6 @@
+// Repository đơn hàng: đặt hàng, cập nhật trạng thái, hủy đơn (UC08, UC09, UC10, UC12).
+// Mọi thao tác ghi đều dùng Firestore Transaction để đảm bảo tính toàn vẹn dữ liệu.
+// Khi đặt hàng: kiểm tra và trừ tồn kho, trừ lượt voucher trong cùng một Transaction.
 // Ẩn `Order` của cloud_firestore để tránh trùng với model Order của app.
 import 'package:cloud_firestore/cloud_firestore.dart' hide Order;
 

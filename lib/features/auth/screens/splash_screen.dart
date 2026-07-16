@@ -1,3 +1,5 @@
+// Màn hình splash: hiển thị logo và spinner trong lúc GoRouter kiểm tra trạng thái đăng nhập.
+// Tự động chuyển hướng khi authStateProvider và currentUserProvider có giá trị.
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_constants.dart';

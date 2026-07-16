@@ -1,3 +1,5 @@
+// Repository nhà cung cấp (UC21): CRUD và stream realtime danh sách nhà cung cấp.
+// Dùng khi tạo phiếu nhập hàng để chọn nguồn gốc hàng hóa.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

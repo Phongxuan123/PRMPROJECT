@@ -1,3 +1,6 @@
+// Service bao bọc Firebase Cloud Messaging (FCM).
+// Xin quyền thông báo, lấy device token và lắng nghe thông báo foreground.
+// Handler background được đăng ký ở main.dart (phải là top-level function).
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 

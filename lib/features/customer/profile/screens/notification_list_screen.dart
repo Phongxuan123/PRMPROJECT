@@ -1,3 +1,5 @@
+// Màn hình thông báo in-app: danh sách thông báo của người dùng, đánh dấu đã đọc.
+// Thông báo được lưu vào subcollection users/{uid}/notifications và stream realtime.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

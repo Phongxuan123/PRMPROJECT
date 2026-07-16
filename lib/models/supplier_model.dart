@@ -1,3 +1,5 @@
+// Model nhà cung cấp hàng hóa, ánh xạ collection suppliers/{supplierId}.
+// Được dùng khi tạo phiếu nhập hàng (ImportReceipt).
 import '../core/utils/firestore_utils.dart';
 
 /// Nhà cung cấp, ánh xạ suppliers/{supplierId}.

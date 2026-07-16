@@ -1,3 +1,5 @@
+// Repository danh mục sản phẩm (UC25): CRUD và stream realtime.
+// Dùng cho cả khách hàng (lọc sản phẩm) và admin (quản lý danh mục).
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

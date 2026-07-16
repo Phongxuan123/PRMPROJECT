@@ -1,3 +1,5 @@
+// Dashboard của BranchManager: lối vào nhanh các chức năng quản lý chi nhánh.
+// Bao gồm: nhân viên, tồn kho, nhập hàng, báo cáo và quản lý nhà cung cấp.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

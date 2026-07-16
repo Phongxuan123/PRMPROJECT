@@ -1,3 +1,5 @@
+// Cấu hình giao diện Material Design 3 cho ứng dụng Mini Market.
+// Định nghĩa màu chủ đạo (seedColor) và tùy chỉnh theme cho AppBar, Card, Button...
 import 'package:flutter/material.dart';
 
 /// Cấu hình giao diện Material Design 3 cho ứng dụng.

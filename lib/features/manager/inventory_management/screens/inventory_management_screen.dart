@@ -1,3 +1,5 @@
+// Màn hình quản lý tồn kho (UC14, UC17): xem tồn kho, điều chỉnh thủ công và xem cảnh báo thấp.
+// Hiển thị tab "Tất cả" và "Thấp" để dễ lọc sản phẩm cần nhập thêm.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

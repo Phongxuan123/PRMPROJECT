@@ -1,3 +1,6 @@
+// Provider người dùng: địa chỉ, thông báo in-app, danh sách tài khoản theo vai trò.
+// myAddressesProvider và myNotificationsProvider lấy UID từ currentUserProvider.
+// allUsersProvider dành riêng cho Admin; branchStaffProvider cho BranchManager.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/constants/user_role.dart';

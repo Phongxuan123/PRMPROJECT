@@ -1,3 +1,6 @@
+// Model yêu cầu hoàn trả hàng (thiết kế sẵn, chưa có UI — phase sau).
+// ReturnRequest ánh xạ returns/{returnId}, ReturnDetail là subcollection details.
+// Xem CLAUDE.md mục "Known architectural constraints" để biết thêm.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../core/constants/order_status.dart';

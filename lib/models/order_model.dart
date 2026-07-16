@@ -1,3 +1,6 @@
+// Model đơn hàng và các loại liên quan.
+// Order ánh xạ orders/{orderId}, OrderDetail là subcollection details.
+// DeliveryTracking là mảng nhúng trong document để theo dõi lịch sử trạng thái giao hàng.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../core/constants/order_status.dart';

@@ -1,3 +1,5 @@
+// Tiện ích hiển thị SnackBar thông báo nhanh dùng chung toàn ứng dụng.
+// Cung cấp 3 kiểu: success (xanh lá), error (đỏ), info (xanh dương).
 import 'package:flutter/material.dart';
 
 /// Tiện ích hiển thị SnackBar thông báo nhanh.

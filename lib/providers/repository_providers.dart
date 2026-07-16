@@ -1,3 +1,6 @@
+// Cung cấp tất cả repository theo pattern: mỗi domain một Provider.
+// Các repository provider phụ thuộc vào firebase_providers (tầng thấp hơn).
+// Không rebuild khi data thay đổi vì repository là singleton ổn định.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../data/repositories/auth_repository.dart';

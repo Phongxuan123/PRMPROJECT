@@ -1,3 +1,5 @@
+// Tập trung tất cả đường dẫn (path constant) của route trong ứng dụng.
+// Khi đổi đường dẫn chỉ cần sửa ở đây, không cần tìm kiếm toàn bộ codebase.
 /// Tập trung đường dẫn (path) của tất cả route trong ứng dụng.
 class AppRoutes {
   const AppRoutes._();

@@ -1,3 +1,5 @@
+// Hộp thoại xác nhận dùng chung cho toàn ứng dụng (xóa, hủy, đăng xuất...).
+// showConfirmDialog() trả về Future<bool?> — true nếu xác nhận, null nếu thoát ngoài.
 import 'package:flutter/material.dart';
 
 /// Hộp thoại xác nhận dùng chung.

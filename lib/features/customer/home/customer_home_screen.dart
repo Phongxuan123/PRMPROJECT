@@ -1,3 +1,5 @@
+// Màn hình chính của khách hàng: BottomNavigationBar chứa trang chủ, sản phẩm, giỏ hàng, hồ sơ.
+// Hiển thị badge số lượng giỏ hàng trên tab Giỏ hàng theo cartCountProvider.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

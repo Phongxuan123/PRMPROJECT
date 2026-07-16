@@ -1,3 +1,5 @@
+// Màn hình đăng nhập (UC02): nhập email/mật khẩu rồi gọi AuthController.signIn().
+// Hỗ trợ "Quên mật khẩu" gửi email reset và liên kết đến màn hình đăng ký.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

@@ -1,3 +1,6 @@
+// Repository người dùng: quản lý hồ sơ, địa chỉ giao hàng và thông báo in-app.
+// watchUser() cung cấp stream realtime cho router và auth provider.
+// Quản lý role/status dành riêng cho Admin (UC23, UC24).
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

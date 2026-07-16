@@ -1,3 +1,6 @@
+// Repository phiếu nhập hàng (UC18): tạo phiếu và cộng tồn kho trong một Transaction.
+// CreateImportParams chứa thông tin nhà cung cấp, chi nhánh và danh sách sản phẩm nhập.
+// Ghi kèm inventory log để theo dõi lịch sử nhập kho.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

@@ -1,3 +1,5 @@
+// Dashboard của Staff: lối vào nhanh quản lý đơn hàng, sản phẩm, tồn kho và khách hàng.
+// Hiển thị tên nhân viên và chi nhánh đang phụ trách lấy từ currentUserProvider.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

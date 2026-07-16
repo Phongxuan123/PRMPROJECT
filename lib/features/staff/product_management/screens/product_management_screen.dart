@@ -1,3 +1,5 @@
+// Màn hình quản lý sản phẩm (UC13): Staff xem toàn bộ sản phẩm, tìm kiếm và điều hướng đến form.
+// Dùng allProductsProvider để hiển thị cả sản phẩm đang ẩn (status == false).
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -1,3 +1,5 @@
+// Tập trung tên collection và helper path cho Firestore.
+// Tránh rải magic string khắp repository; khi đổi tên collection chỉ sửa ở đây.
 /// Tập trung tên collection / đường dẫn Firestore.
 ///
 /// Tránh rải magic string khắp repository. Khi đổi tên collection chỉ sửa ở đây.

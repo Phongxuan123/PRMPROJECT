@@ -1,3 +1,5 @@
+// Màn hình lịch sử đơn hàng (UC09): danh sách đơn đã đặt sắp xếp từ mới nhất.
+// Nhấn vào đơn để xem chi tiết và theo dõi trạng thái giao hàng.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

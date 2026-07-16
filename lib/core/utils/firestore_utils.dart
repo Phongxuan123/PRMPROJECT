@@ -1,3 +1,6 @@
+// Tiện ích đọc dữ liệu từ Firestore an toàn với null safety.
+// Firestore trả về Map<String, dynamic> nên cần ép kiểu cẩn thận để tránh lỗi runtime.
+// Tất cả repository đều dùng các helper này thay vì cast trực tiếp.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 /// Tiện ích đọc dữ liệu Firestore an toàn với null safety.

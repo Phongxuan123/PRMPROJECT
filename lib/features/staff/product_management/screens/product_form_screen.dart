@@ -1,3 +1,5 @@
+// Form thêm / chỉnh sửa sản phẩm (UC13): nhập tên, mã vạch, giá, danh mục và ảnh.
+// Upload ảnh lên Cloudinary qua FirebaseStorageService; hỗ trợ cả File (mobile) và Uint8List (web).
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';

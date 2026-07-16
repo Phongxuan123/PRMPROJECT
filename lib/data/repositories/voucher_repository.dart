@@ -1,3 +1,6 @@
+// Repository mã giảm giá (voucher): validate khi áp mã và CRUD cho Admin.
+// validateVoucher() kiểm tra toàn bộ điều kiện (tồn tại, còn lượt, chưa hết hạn, đủ giá trị đơn).
+// Việc trừ lượt voucher thực sự xảy ra trong Transaction của OrderRepository.createOrder().
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

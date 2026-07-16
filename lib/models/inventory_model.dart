@@ -1,3 +1,6 @@
+// Model tồn kho theo chi nhánh và nhật ký thay đổi.
+// Inventory ánh xạ inventory/{branchId_productId} (id kết hợp để tra cứu nhanh).
+// InventoryLog ánh xạ inventory/{id}/logs/{logId} để ghi lịch sử thay đổi.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../core/constants/order_status.dart';

@@ -1,3 +1,5 @@
+// Màn hình chi tiết hóa đơn (UC16): Staff xem hóa đơn liên kết với đơn hàng đã hoàn thành.
+// Hóa đơn được tạo tự động bởi OrderRepository khi đơn chuyển sang completed.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

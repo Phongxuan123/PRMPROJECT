@@ -1,3 +1,6 @@
+// Các exception nghiệp vụ của ứng dụng Mini Market.
+// Repository bắt FirebaseException và ném lại dưới dạng domain exception này
+// để tầng Provider / UI xử lý mà không cần biết chi tiết Firebase.
 /// Các exception nghiệp vụ (domain exception) của ứng dụng.
 ///
 /// Repository bắt [FirebaseException] và ném lại dưới dạng các exception này

@@ -1,3 +1,6 @@
+// Repository quản lý tồn kho (UC14, UC17): xem theo chi nhánh, điều chỉnh thủ công, xem log.
+// adjustQuantity() dùng Transaction để ghi đồng thời inventory doc và log trong một lần atomic.
+// watchLowStock() lọc sản phẩm dưới ngưỡng AppConstants.lowStockThreshold.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/app_constants.dart';

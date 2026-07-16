@@ -1,3 +1,6 @@
+// Màn hình thanh toán (UC08): chọn địa chỉ, phương thức thanh toán, áp mã voucher và đặt hàng.
+// Gọi OrderController.createOrder() để tạo đơn trong một Firestore Transaction.
+// Sau khi đặt thành công, giỏ hàng được xóa và điều hướng đến lịch sử đơn hàng.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

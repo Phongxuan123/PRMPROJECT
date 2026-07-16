@@ -1,3 +1,6 @@
+// Màn hình phiếu nhập hàng (UC18): tạo phiếu nhập từ nhà cung cấp và cập nhật tồn kho.
+// Mỗi dòng nhập gồm sản phẩm + số lượng + giá nhập; tạo xong là Transaction Firestore.
+// Tồn kho được cộng ngay và ghi log để theo dõi lịch sử nhập kho.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

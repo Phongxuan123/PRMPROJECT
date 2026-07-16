@@ -1,3 +1,6 @@
+// Cấu hình Cloudinary để upload ảnh sản phẩm / avatar.
+// Dùng unsigned upload preset (không nhúng API secret vào client).
+// Xem hướng dẫn bên dưới để lấy Cloud Name và tạo Upload Preset.
 /// Cấu hình Cloudinary — điền cloud_name sau khi tạo tài khoản.
 ///
 /// Hướng dẫn:

@@ -1,3 +1,6 @@
+// Repository xác thực: kết hợp Firebase Auth và Firestore để quản lý đăng nhập/đăng ký.
+// Dịch FirebaseAuthException sang domain exception (AuthException, DataException).
+// Đây là nguồn sự thật duy nhất cho trạng thái đăng nhập của ứng dụng.
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

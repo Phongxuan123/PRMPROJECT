@@ -1,3 +1,5 @@
+// Màn hình quản lý chi nhánh (UC20): xem danh sách, thêm, sửa, xóa chi nhánh.
+// Dành cho BranchManager và Admin; mỗi chi nhánh có thể gán Manager phụ trách.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

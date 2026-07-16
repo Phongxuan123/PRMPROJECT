@@ -1,3 +1,5 @@
+// Widget trường nhập liệu dùng chung cho các màn hình xác thực (login, register).
+// Hỗ trợ icon, obscureText (ẩn mật khẩu) và validator callback.
 import 'package:flutter/material.dart';
 
 /// Trường nhập liệu dùng chung cho màn hình xác thực.

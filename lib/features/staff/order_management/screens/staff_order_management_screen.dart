@@ -1,3 +1,5 @@
+// Màn hình quản lý đơn hàng (UC12): Staff xem danh sách đơn của chi nhánh theo trạng thái.
+// Tab lọc theo trạng thái (pending, confirmed, shipping, completed, cancelled).
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

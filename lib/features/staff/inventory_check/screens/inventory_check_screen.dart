@@ -1,3 +1,5 @@
+// Màn hình kiểm kho (UC14): Staff xem tồn kho chi nhánh và điều chỉnh số lượng thực tế.
+// Điều chỉnh được ghi vào Firestore Transaction kèm log lý do thay đổi.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

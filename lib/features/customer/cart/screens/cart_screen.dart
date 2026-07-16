@@ -1,3 +1,5 @@
+// Màn hình giỏ hàng (UC07): xem, chỉnh số lượng, xóa sản phẩm và chuyển sang thanh toán.
+// Hiển thị badge tổng số lượng và tổng tiền ở thanh dưới cùng.
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

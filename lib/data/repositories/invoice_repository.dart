@@ -1,3 +1,6 @@
+// Repository tra cứu hóa đơn (UC16).
+// Hóa đơn được tạo tự động bởi OrderRepository khi đơn hàng chuyển sang completed.
+// Repository này chỉ có chức năng đọc (không tạo/sửa/xóa hóa đơn trực tiếp).
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

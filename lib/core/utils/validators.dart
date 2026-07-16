@@ -1,3 +1,5 @@
+// Tập hợp các hàm validate dùng cho TextFormField trong toàn ứng dụng.
+// Mỗi hàm trả về null nếu hợp lệ, hoặc chuỗi thông báo lỗi nếu không hợp lệ.
 import '../constants/app_constants.dart';
 
 /// Tập hợp hàm validate dữ liệu nhập từ form.

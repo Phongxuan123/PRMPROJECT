@@ -1,3 +1,6 @@
+// Repository sản phẩm: CRUD, upload ảnh và quản lý đánh giá (UC03, UC11, UC13).
+// isBarcodeTaken() kiểm tra barcode trùng trước khi thêm/sửa sản phẩm.
+// Ảnh được upload lên Cloudinary qua FirebaseStorageService, trả về URL lưu vào Firestore.
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';

@@ -1,3 +1,5 @@
+// Định nghĩa enum vai trò (UserRole) và trạng thái tài khoản (UserStatus).
+// Giá trị string của enum được lưu vào Firestore để ánh xạ qua lại.
 /// Vai trò người dùng trong hệ thống.
 ///
 /// Giá trị [value] được lưu vào field `role` của document users/{uid}.

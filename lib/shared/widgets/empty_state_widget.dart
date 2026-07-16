@@ -1,3 +1,5 @@
+// Widget hiển thị trạng thái trống dùng chung khi danh sách không có dữ liệu.
+// Nhận icon, tiêu đề và mô tả tùy chỉnh theo từng màn hình.
 import 'package:flutter/material.dart';
 
 /// Hiển thị trạng thái trống (không có dữ liệu) dùng chung.

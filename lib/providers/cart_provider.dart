@@ -1,3 +1,5 @@
+// Provider giỏ hàng: stream realtime items, tổng tiền và badge số lượng.
+// Dùng .select() để chỉ rebuild khi UID thay đổi, tránh restart stream khi token refresh.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/cart_item_model.dart';

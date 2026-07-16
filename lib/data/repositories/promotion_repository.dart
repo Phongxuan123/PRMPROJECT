@@ -1,3 +1,5 @@
+// Repository khuyến mãi (UC04, UC26): CRUD và stream riêng cho Admin và khách hàng.
+// watchActivePromotions() lọc thêm ở client-side theo isActive (kết hợp status + thời gian).
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

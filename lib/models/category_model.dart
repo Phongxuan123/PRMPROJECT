@@ -1,3 +1,5 @@
+// Model danh mục sản phẩm, ánh xạ collection categories/{categoryId} trong Firestore.
+// Dùng để nhóm sản phẩm và cho phép khách hàng lọc theo danh mục.
 import '../core/utils/firestore_utils.dart';
 
 /// Danh mục sản phẩm, ánh xạ categories/{categoryId}.

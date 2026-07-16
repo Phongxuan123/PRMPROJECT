@@ -1,3 +1,6 @@
+// Provider gốc cho các instance Firebase singleton và service wrapper.
+// Tách riêng để dễ override bằng fake/mock trong unit test.
+// Đây là tầng thấp nhất trong chuỗi: firebase_providers → repository_providers → feature providers.
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
