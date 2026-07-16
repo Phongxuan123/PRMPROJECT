@@ -1,3 +1,6 @@
+// Repository giỏ hàng (UC07): thêm, cập nhật số lượng, xóa và xóa toàn bộ giỏ.
+// Mỗi user có đúng 1 cart document; items là subcollection carts/{userId}/items.
+// addToCart() cộng dồn nếu sản phẩm đã có trong giỏ, không tạo bản ghi trùng.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

@@ -1,3 +1,5 @@
+// Màn hình quản lý tài khoản (UC23, UC24): Admin xem, phân quyền và khóa/mở tài khoản.
+// Hỗ trợ lọc theo vai trò và thay đổi role/status của người dùng bất kỳ.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

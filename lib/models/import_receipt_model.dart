@@ -1,3 +1,6 @@
+// Model phiếu nhập hàng từ nhà cung cấp.
+// ImportReceipt ánh xạ importReceipts/{receiptId}, ImportDetail là subcollection details.
+// Khi tạo phiếu nhập, tồn kho sẽ được cộng thêm trong một Firestore Transaction.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../core/utils/firestore_utils.dart';

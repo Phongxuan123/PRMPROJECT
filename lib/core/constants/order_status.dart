@@ -1,3 +1,6 @@
+// Định nghĩa các enum trạng thái liên quan đến đơn hàng và tồn kho.
+// OrderStatus: luồng xử lý đơn (pending → confirmed → shipping → completed / cancelled).
+// PaymentStatus, PaymentMethod, ReturnStatus, InventoryChangeType cũng được định nghĩa ở đây.
 /// Trạng thái đơn hàng.
 enum OrderStatus {
   pending('pending'),

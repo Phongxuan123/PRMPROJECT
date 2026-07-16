@@ -1,3 +1,5 @@
+// Màn hình quản lý danh mục sản phẩm (UC25): Admin CRUD danh mục dùng để nhóm sản phẩm.
+// Danh mục được khách hàng dùng để lọc sản phẩm trong màn hình danh sách.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

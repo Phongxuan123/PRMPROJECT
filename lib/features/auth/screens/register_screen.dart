@@ -1,3 +1,5 @@
+// Màn hình đăng ký tài khoản mới (UC01): tên, email, mật khẩu, số điện thoại.
+// Tài khoản được tạo với vai trò customer mặc định, Admin có thể đổi role sau.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

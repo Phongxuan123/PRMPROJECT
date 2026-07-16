@@ -1,3 +1,5 @@
+// Màn hình quản lý nhân viên chi nhánh (UC19): xem danh sách staff, thêm/xóa khỏi chi nhánh.
+// BranchManager chỉ xem nhân viên của chi nhánh mình (branchStaffProvider).
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

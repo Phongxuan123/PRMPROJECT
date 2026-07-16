@@ -1,3 +1,6 @@
+// Cấu hình GoRouter: định nghĩa tất cả route và guard phân quyền theo role.
+// redirect() là điểm duy nhất kiểm tra trạng thái đăng nhập và vai trò người dùng.
+// Thêm route mới phải đặt dưới prefix tương ứng (/admin, /manager, /staff) để kế thừa guard.
 import 'package:flutter/foundation.dart' show ValueNotifier;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

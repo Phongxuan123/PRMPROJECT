@@ -1,3 +1,5 @@
+// Widget thẻ sản phẩm dùng chung trong danh sách và trang chủ.
+// Hiển thị ảnh (CachedNetworkImage), tên, giá định dạng VND và nhãn khuyến mãi.
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 

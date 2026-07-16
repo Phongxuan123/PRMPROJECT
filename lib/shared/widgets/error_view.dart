@@ -1,3 +1,5 @@
+// Widget hiển thị lỗi dùng chung kèm nút "Thử lại" để trigger rebuild provider.
+// Đặt tên ErrorView thay vì ErrorWidget để tránh xung đột với widget nội bộ của Flutter.
 import 'package:flutter/material.dart';
 
 /// Hiển thị lỗi dùng chung kèm nút thử lại.

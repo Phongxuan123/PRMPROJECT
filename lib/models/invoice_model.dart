@@ -1,3 +1,5 @@
+// Model hóa đơn, được tạo tự động khi đơn hàng chuyển sang trạng thái completed.
+// Hóa đơn ánh xạ collection invoices/{invoiceId} và liên kết với orders/{orderId}.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../core/utils/firestore_utils.dart';

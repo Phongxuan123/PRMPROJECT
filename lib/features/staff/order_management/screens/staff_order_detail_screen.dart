@@ -1,3 +1,5 @@
+// Màn hình chi tiết đơn hàng dành cho Staff (UC12): xem sản phẩm, địa chỉ và cập nhật trạng thái.
+// Staff có thể chuyển trạng thái: confirmed → shipping → completed; không thể hủy đơn.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

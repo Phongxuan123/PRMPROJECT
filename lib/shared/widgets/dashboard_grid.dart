@@ -1,3 +1,5 @@
+// Widget lưới chức năng dùng cho Dashboard của các vai trò (Staff, Manager, Admin).
+// DashboardItem định nghĩa icon, tiêu đề và callback; DashboardGrid render lưới 2 cột.
 import 'package:flutter/material.dart';
 
 /// Một mục chức năng trên dashboard.

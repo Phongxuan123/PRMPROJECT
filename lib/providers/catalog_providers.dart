@@ -1,3 +1,6 @@
+// Provider cho các danh mục dữ liệu dùng chung (master data).
+// Bao gồm: danh mục sản phẩm, chi nhánh, nhà cung cấp, voucher, khuyến mãi.
+// Các provider này được nhiều màn hình khác nhau watch đồng thời.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/branch_model.dart';

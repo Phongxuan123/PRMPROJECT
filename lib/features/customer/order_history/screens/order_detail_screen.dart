@@ -1,3 +1,5 @@
+// Màn hình chi tiết đơn hàng (UC09): xem trạng thái, sản phẩm, tổng tiền và hóa đơn.
+// Cho phép khách hàng hủy đơn nếu đơn đang ở trạng thái pending.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

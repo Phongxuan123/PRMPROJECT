@@ -1,3 +1,5 @@
+// Widget hiển thị trạng thái đơn hàng dưới dạng chip màu (Badge).
+// Ánh xạ OrderStatus → màu sắc và nhãn tiếng Việt để nhất quán toàn ứng dụng.
 import 'package:flutter/material.dart';
 
 import '../../core/constants/order_status.dart';

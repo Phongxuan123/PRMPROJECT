@@ -1,3 +1,5 @@
+// Màn hình quản lý nhà cung cấp (UC21): CRUD danh sách nhà cung cấp.
+// Nhà cung cấp được chọn khi tạo phiếu nhập hàng để ghi nguồn gốc hàng hóa.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -1,3 +1,6 @@
+// Provider báo cáo: tổng hợp doanh thu theo chi nhánh và số liệu tổng quan.
+// revenueReportProvider nhận branchId (null = tất cả chi nhánh cho Admin).
+// dashboardSummaryProvider dùng AggregateQuery để đếm nhanh không tải toàn bộ dữ liệu.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../data/repositories/report_repository.dart';

@@ -1,3 +1,5 @@
+// Màn hình viết đánh giá sản phẩm (UC11): chọn số sao và nhập nhận xét.
+// Chỉ hiển thị cho khách hàng đã mua và nhận hàng thành công.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

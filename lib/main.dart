@@ -1,3 +1,6 @@
+// Điểm khởi động ứng dụng Mini Market.
+// Khởi tạo Firebase, FCM, seed dữ liệu (debug) rồi chạy MaterialApp.
+// Nếu Firebase chưa cấu hình thì hiển thị màn hình hướng dẫn thay vì crash.
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;

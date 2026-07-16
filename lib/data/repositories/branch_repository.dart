@@ -1,3 +1,5 @@
+// Repository quản lý chi nhánh siêu thị (UC20).
+// Cung cấp CRUD và stream realtime danh sách chi nhánh cho Admin và Manager.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

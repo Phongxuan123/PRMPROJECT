@@ -1,3 +1,5 @@
+// Màn hình quản lý khuyến mãi (UC26): Admin tạo, sửa, xóa chương trình giảm giá.
+// Mỗi khuyến mãi gắn với danh sách productIds và có thời hạn hiệu lực cụ thể.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

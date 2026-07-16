@@ -1,3 +1,5 @@
+// Model item trong giỏ hàng, ánh xạ subcollection carts/{userId}/items/{itemId}.
+// Lưu snapshot giá tại thời điểm thêm vào giỏ để tính toán chính xác.
 import '../core/utils/firestore_utils.dart';
 
 /// Sản phẩm trong giỏ hàng, ánh xạ carts/{userId}/items/{itemId}.

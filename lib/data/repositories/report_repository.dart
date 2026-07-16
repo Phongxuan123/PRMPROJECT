@@ -1,3 +1,6 @@
+// Repository báo cáo (UC22, UC27): tổng hợp doanh thu, đơn hàng, tồn kho.
+// Firestore không có GROUP BY nên tính toán client-side sau khi tải dữ liệu thô.
+// buildDashboardSummary() dùng AggregateQuery để đếm số khách hàng và sản phẩm hiệu quả hơn.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../core/constants/firestore_paths.dart';

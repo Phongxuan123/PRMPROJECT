@@ -1,3 +1,5 @@
+// Màn hình danh sách sản phẩm (UC03): tìm kiếm, lọc danh mục, lưới sản phẩm.
+// Kết hợp productSearchQueryProvider và productCategoryFilterProvider để lọc client-side.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

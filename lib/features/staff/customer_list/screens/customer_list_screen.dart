@@ -1,3 +1,5 @@
+// Màn hình danh sách khách hàng (UC15): Staff xem thông tin tài khoản khách hàng.
+// Chỉ hiển thị đọc, không cho phép sửa thông tin — Admin mới có quyền quản lý tài khoản.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

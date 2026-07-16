@@ -1,3 +1,5 @@
+// Tiện ích định dạng ngày giờ theo kiểu Việt Nam (dd/MM/yyyy HH:mm).
+// Cũng cung cấp hàm timeAgo() để hiển thị khoảng thời gian tương đối.
 import 'package:intl/intl.dart';
 
 /// Tiện ích định dạng ngày giờ.

@@ -1,3 +1,6 @@
+// Service bao bọc FirebaseAuth, tập trung các thao tác xác thực.
+// Không xử lý logic nghiệp vụ ở đây — chỉ gọi FirebaseAuth API.
+// AuthRepository là nơi dịch FirebaseAuthException sang domain exception.
 import 'package:firebase_auth/firebase_auth.dart';
 
 /// Bao bọc FirebaseAuth, tập trung các thao tác xác thực.

@@ -1,3 +1,6 @@
+// Service tạo dữ liệu mẫu (seed data) cho môi trường debug.
+// Chỉ chạy một lần khi collection categories còn trống.
+// QUAN TRỌNG: _seedUsers() gọi signOut() — không chạy mỗi lần khởi động để tránh đăng xuất người dùng thật.
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';

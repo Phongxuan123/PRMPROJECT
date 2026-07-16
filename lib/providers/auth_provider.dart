@@ -1,3 +1,7 @@
+// Provider xác thực: cung cấp trạng thái đăng nhập và controller đăng nhập/đăng ký.
+// authStateProvider: stream Firebase Auth User (chỉ cho biết đã đăng nhập chưa).
+// currentUserProvider: stream AppUser từ Firestore (đầy đủ hồ sơ, role, status).
+// AuthController: xử lý signIn, register, signOut, sendPasswordReset.
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

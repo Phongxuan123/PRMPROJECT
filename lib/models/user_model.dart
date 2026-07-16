@@ -1,3 +1,6 @@
+// Model người dùng và các loại liên quan.
+// AppUser ánh xạ users/{uid}, Address là subcollection addresses, AppNotification là subcollection notifications.
+// Đặt tên AppUser để tránh trùng với User của firebase_auth.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../core/constants/user_role.dart';

@@ -1,3 +1,6 @@
+// Provider đơn hàng: stream lịch sử đặt hàng, chi tiết đơn và controller xử lý.
+// OrderController bọc createOrder (có xóa giỏ sau khi tạo), cancelOrder và updateStatus.
+// Dùng select() để tránh restart stream không cần thiết khi token Firebase refresh.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/constants/order_status.dart';

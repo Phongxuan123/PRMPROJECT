@@ -1,3 +1,6 @@
+// Service upload ảnh lên Cloudinary thay cho Firebase Storage.
+// Dùng unsigned upload preset nên không cần API secret phía client.
+// Hỗ trợ cả File (mobile) và Uint8List (web) để đa nền tảng.
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';

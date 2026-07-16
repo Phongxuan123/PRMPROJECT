@@ -1,3 +1,6 @@
+// Provider sản phẩm: stream danh sách, tìm kiếm, lọc danh mục và đánh giá.
+// filteredProductsProvider kết hợp activeProductsProvider + query + categoryId ở client-side.
+// allProductsProvider dành cho Staff/Admin xem cả sản phẩm đang ẩn.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/product_model.dart';

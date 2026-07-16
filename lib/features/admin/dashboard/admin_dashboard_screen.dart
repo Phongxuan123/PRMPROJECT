@@ -1,3 +1,5 @@
+// Dashboard Admin: lối vào nhanh tất cả chức năng quản trị toàn hệ thống.
+// Bao gồm: tài khoản, sản phẩm, danh mục, chi nhánh, khuyến mãi, thống kê.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

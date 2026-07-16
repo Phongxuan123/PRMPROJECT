@@ -1,3 +1,5 @@
+// Hằng số dùng chung toàn ứng dụng Mini Market.
+// Tập trung tất cả magic number và magic string tại đây để dễ bảo trì.
 /// Hằng số dùng chung toàn ứng dụng.
 ///
 /// Tập trung magic number / magic string tại một nơi để tránh lặp và dễ bảo trì.

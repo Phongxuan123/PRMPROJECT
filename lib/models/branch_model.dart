@@ -1,3 +1,5 @@
+// Model chi nhánh siêu thị, ánh xạ collection branches/{branchId} trong Firestore.
+// Mỗi chi nhánh có thể gán một BranchManager (managerId) và trạng thái hoạt động.
 import '../core/utils/firestore_utils.dart';
 
 /// Chi nhánh siêu thị, ánh xạ branches/{branchId}.

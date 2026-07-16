@@ -1,3 +1,5 @@
+// Màn hình chi tiết sản phẩm (UC03): xem ảnh, mô tả, giá, đánh giá và thêm vào giỏ.
+// Hiển thị ảnh gallery dạng carousel; nút thêm vào giỏ gọi CartRepository.addToCart().
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

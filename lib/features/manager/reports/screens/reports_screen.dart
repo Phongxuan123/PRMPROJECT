@@ -1,3 +1,5 @@
+// Màn hình báo cáo (UC22): tổng hợp doanh thu, số đơn theo trạng thái cho chi nhánh.
+// BranchManager chỉ xem báo cáo chi nhánh của mình; Admin xem toàn hệ thống.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

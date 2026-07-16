@@ -1,3 +1,5 @@
+// Tiện ích định dạng tiền tệ Việt Nam Đồng (VND).
+// Dùng thư viện intl để format theo locale vi_VN với ký hiệu 'd'.
 import 'package:intl/intl.dart';
 
 /// Tiện ích định dạng tiền tệ Việt Nam Đồng.

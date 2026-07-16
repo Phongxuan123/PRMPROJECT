@@ -1,3 +1,5 @@
+// Màn hình quản lý địa chỉ giao hàng (UC06): thêm, sửa, xóa, đặt địa chỉ mặc định.
+// Địa chỉ được lưu vào subcollection users/{uid}/addresses trong Firestore.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

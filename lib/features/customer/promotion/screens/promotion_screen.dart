@@ -1,3 +1,5 @@
+// Màn hình khuyến mãi (UC04): danh sách chương trình đang hoạt động cho khách hàng.
+// Watch activePromotionsProvider để chỉ hiện khuyến mãi đang trong thời gian hiệu lực.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

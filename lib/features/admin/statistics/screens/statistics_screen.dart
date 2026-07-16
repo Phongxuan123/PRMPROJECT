@@ -1,3 +1,5 @@
+// Màn hình thống kê toàn hệ thống (UC27): Admin xem dashboard tổng hợp và báo cáo doanh thu.
+// Dùng dashboardSummaryProvider (AggregateQuery) và revenueReportProvider (branchId = null).
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
